@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  color: #fff;
+  display: inline-block;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.active {
+  color: rgb(82, 248, 57);
+}

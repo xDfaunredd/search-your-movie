@@ -1,0 +1,26 @@
+.item {
+  max-width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: black;
+  padding: 10px;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.image {
+  border-radius: 5px;
+}
+
+.title {
+  color: #fff;
+}
+
+.text {
+  color: #fff;
+}
