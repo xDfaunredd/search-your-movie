@@ -3,6 +3,7 @@ import s from "./SearchForm.module.css";
 
 import { fetchMoviesByTitle } from "../../redux/moviesSlice/moviesOps";
 import { useAppDispatch } from "../../hooks/hooks";
+import toast from "react-hot-toast";
 
 type InitialValues = {
   searchedMovie: string;
@@ -18,8 +19,12 @@ const SearchForm = () => {
     values: InitialValues,
     actions: FormikHelpers<InitialValues>
   ) {
+    if (values.searchedMovie.trim() === "") {
+      toast.error("Enter some value!");
+      return;
+    }
     console.log(values);
-    dispatch(fetchMoviesByTitle(values.searchedMovie));
+    dispatch(fetchMoviesByTitle(values.searchedMovie.trim()));
 
     actions.resetForm();
   }

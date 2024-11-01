@@ -11,7 +11,7 @@ const MoviesList = () => {
 
   return (
     <ul className={s.list}>
-      {movies?.length > 0
+      {movies && movies.length > 0
         ? movies.map((item: Movie) => (
             <MovieItem key={item.imdbID} item={item} />
           ))

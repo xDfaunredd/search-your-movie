@@ -4,7 +4,7 @@ import { CurrentMovie, Movie } from "../../types/types";
 import { fetchMovieByID, fetchMoviesByTitle } from "./moviesOps";
 
 export type InitialState = {
-  items: Array<Movie>;
+  items: Array<Movie> | undefined;
   currentFilm: CurrentMovie;
 };
 
@@ -29,11 +29,15 @@ const movieSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchMoviesByTitle.fulfilled, (state, actions) => {
-        console.log(actions.payload.Search);
-        state.items = actions.payload.Search;
+        if (actions.payload) {
+          console.log(actions.payload.Search);
+          state.items = actions.payload.Search;
+        }
       })
       .addCase(fetchMovieByID.fulfilled, (state, action) => {
-        state.currentFilm = action.payload;
+        if (action.payload) {
+          state.currentFilm = action.payload;
+        }
       });
   },
 });
