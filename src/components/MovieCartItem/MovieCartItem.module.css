@@ -1,0 +1,24 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+
+  max-width: 300px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px;
+  color: #000;
+}
+
+.button {
+  margin-top: 10px;
+  background-color: rgb(181, 19, 181);
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid #000;
+  outline: none;
+  padding: 5px;
+}
